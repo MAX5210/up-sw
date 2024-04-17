@@ -15,16 +15,13 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAB_ESC_CTRL";
             #binding-cells = <0>;
-            bindings =
-                <&mt LCTRL ESC>,
-                <&kp TAB>;
+            bindings = <&mt LCTRL ESC>, <&kp TAB>;
         };
+
         gqt: global-quick-tap {
             compatible = "zmk,behavior-hold-tap";
             label = "GLOBAL_QUICK_TAP";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             quick-tap-ms = <180>;
@@ -32,24 +29,22 @@
             global-quick-tap;
             flavor = "tap-preferred";
         };
+
         ltq: ltq {
             compatible = "zmk,behavior-hold-tap";
             label = "LTQ";
-            bindings =
-                <&mo>,
-                <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             global-quick-tap;
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
         };
+
         ht: ht {
             compatible = "zmk,behavior-hold-tap";
             label = "HT";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -164,19 +159,16 @@
         };
     };
 
-    macros {
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         base {
             label = "Base";
             bindings = <
-&ht ESC Q    &kp W  &kp E             &kp R      &kp T    &kp Y  &kp U            &kp I              &kp O        &kp P
-&kp A        &kp S  &kp D             &kp F      &kp G    &kp H  &ht RIGHT_ALT J  &ht RIGHT_GUI K    &ht RCTRL L  &kp BSPC
-&ht LSHFT Z  &kp X  &ht LEFT_ALT C    &kp V      &kp B    &kp N  &kp M            &kp COMMA          &kp SLASH    &ht RSHFT ENTER
-                    &kp LEFT_CONTROL  &kp SPACE  &mo 1    &mo 1  &mo 2            &kp RIGHT_CONTROL
+&ht ESC Q    &kp W  &kp E             &kp R      &kp T    &kp Y                   &kp U            &kp I              &kp O        &kp P
+&kp A        &kp S  &kp D             &kp F      &kp G    &kp H                   &ht RIGHT_ALT J  &ht RIGHT_GUI K    &ht RCTRL L  &kp BSPC
+&ht LSHFT Z  &kp X  &ht LEFT_ALT C    &kp V      &kp B    &kp N                   &kp M            &kp COMMA          &kp SLASH    &ht RSHFT ENTER
+                    &kp LEFT_CONTROL  &kp SPACE  &mo 1    &ht LEFT_CONTROL SPACE  &mo 2            &kp RIGHT_CONTROL
             >;
 
             sensor-bindings =
